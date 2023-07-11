@@ -1,6 +1,6 @@
 .mat-toolbar {
-  height: 80px;
-  background-color:lightblue;
+  height: 100px;
+  background-color:#e0dede;;
   color: darkred;
   justify-content: center;
   margin-left: 30px;
@@ -12,7 +12,6 @@
 .mat-sidenav-container {
     margin-top: 10px;
     padding: 16px;
-    /* height: calc(100vh - 65px); */
     height: 100%;
     border-radius: 10px;
     text-align: center;    
@@ -21,7 +20,7 @@
 .mat-sidenav {
     margin: 16px;
     border-right: none;
-    background:lightblue;
+    background:#e0dede;
     width: 150px;
     margin-top: 16px;
     border-radius: 10px;
@@ -37,7 +36,7 @@
   .content {
     padding-left: 50px;
     height:calc(100vh - 98px);
-    background-color: lightcyan;
+    background-color: rgb(247, 210, 247);
     display:flex;
     justify-content: left;
     font-size: 1rem;

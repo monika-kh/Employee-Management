@@ -1,7 +1,8 @@
+<!-- <app-sidebar></app-sidebar> -->
+
 <div>
   <ng-container *ngIf="dataSource.length > 0">
     <table mat-table [dataSource]="dataSource">
-      <!-- Column definitions -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>ID</th>
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
@@ -18,23 +19,17 @@
           <td mat-cell *matCellDef="let element" [ngClass]="{'absent': getAttendanceStatus(element, date)==='Absent'}">
             {{ getAttendanceStatus(element, date)}}</td>
         </ng-container>
+        
       </ng-container>
 
       <ng-container matColumnDef="department">
-        <th mat-header-cell *matHeaderCellDef>Department</th>
+        <th mat-header-cell *matHeaderCellDef>Speciality</th>
         <td mat-cell *matCellDef="let element">{{ element.department }}</td>
       </ng-container>
 
-      <!-- <ng-container matColumnDef="is_present">
-
-        <th><th mat-header-cell *matHeaderCellDef>Mark Attendence</th>
-          <mat-checkbox [ngModel]="present" class="example-margin">
-          <label>Mark Attendence </label> 
-      </mat-checkbox>
-    </ng-container> -->
       <!-- Table rows -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns; let even = even; let odd = odd;"></tr>
     </table>
   </ng-container>
 

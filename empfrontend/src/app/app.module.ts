@@ -21,6 +21,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DatePipe } from '@angular/common';
+import { PaginationComponent } from './pagination/pagination.component';
+import { LoginComponent } from './login/login.component';
+import { LoginuserComponent } from './login/loginuser/loginuser.component';
+import { RegisterComponent } from './login/register/register.component';
+import { ResetpasswordComponent } from './login/resetpassword/resetpassword.component';
+import { LoginModule } from './login/login/login.module';
+import { DashboardModule } from './dashboard/dashboard/dashboard.module';
+
 
 
 @NgModule({
@@ -30,6 +38,11 @@ import { DatePipe } from '@angular/common';
     EmployeeComponent,
     AddattendenceComponent,
     SidebarComponent,
+    PaginationComponent,
+    LoginComponent,
+    LoginuserComponent,
+    RegisterComponent,
+    ResetpasswordComponent,
   ],
   
   imports: [
@@ -48,7 +61,9 @@ import { DatePipe } from '@angular/common';
     EmployeeModule,
     MatIconModule,
     MatButtonToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    LoginModule,
+    DashboardModule
   ],
     
   providers: [DatePipe],
