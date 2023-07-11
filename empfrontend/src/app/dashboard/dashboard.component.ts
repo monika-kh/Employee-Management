@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard/dashboard.service'
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,20 +10,21 @@ import { DashboardService } from '../dashboard/dashboard.service'
 
 
 export class DashboardComponent implements OnInit{
-
-  // days: string[] = Array.from({ length: 31 }, (_, i) => String(i + 1));
   
   dataSource: any[] = [];
   displayedColumns: string[] | undefined
   router: any;
   present = false
+  today_date: any = new Date;
 
   constructor(
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    private datePipe: DatePipe,
     ) { } 
   
 
   ngOnInit(): void {
+    this.today_date = this.datePipe.transform(this.today_date, 'yyyy-MM-dd');
     this.getEmpList();
   }
 

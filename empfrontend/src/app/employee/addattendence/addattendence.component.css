@@ -4,7 +4,8 @@ table {
   }
   
   td {
+    width: 400px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #0e0e0e;
   }
   

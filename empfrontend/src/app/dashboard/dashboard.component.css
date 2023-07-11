@@ -4,4 +4,14 @@
 
 .table {
     width: 200%;
+    /* border: #201dad;
+    border-style: solid; */
+
+  }
+  .table-row-alt {
+    background-color: #201dad; /* Set your desired alternate row color */
+  }
+
+.div {
+    border-style: solid;
   }

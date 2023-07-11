@@ -14,11 +14,6 @@ export class DashboardService {
   ) { }
 
   
-  // public dataList: any=[];
-  // public subject = new Subject<any>();
-  // private data = new BehaviorSubject(this.dataList);
-
-
   getAttendanceData(): Observable<any[]> {
     return this.http.get<any[]>(this.url)
 

@@ -4,7 +4,6 @@
     flex-direction: column;
     color: #FFF;
     height: 100%;
-
     .section {
         flex: 1;
     }
@@ -21,5 +20,4 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #43abd6;
 }

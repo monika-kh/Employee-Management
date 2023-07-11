@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="slide navbar style.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <label for="chk" aria-hidden="true">Sign Up From Here! </label>
+	<div class="main">  	
+        <div class="login">
+            <br>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <input type="checkbox" id=chk  aria-hidden="true">
+                    <input type="text" [(ngModel)]="first_name" formControlName="first_name" placeholder="First Name" required>
+                    <input type="text" [(ngModel)]="last_name" formControlName="last_name" placeholder="Last Name" required>
+                    <input type="text" [(ngModel)]="department" formControlName="department" placeholder="Department" required>
+                    <input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email" required>
+                    <input type="password" [(ngModel)]="password" formControlName="password" placeholder="Password" required>
+                    <input type="password2" [(ngModel)]="password2" formControlName="password2" placeholder="Confirm Password" required>
+					<button type="submit">Sign up</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>

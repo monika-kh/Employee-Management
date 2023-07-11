@@ -1,21 +1,24 @@
-<form [formGroup]="userForm">
-    <table>
-        <tr>
-            <th>EmpId</th>
-            <th>Emp Name</th>
-            <th>Mark Attendence</th>
-        </tr>
-        <tr *ngFor="let user of all_users; let i = index">
-            <td>{{user.user_id}}</td>
-            <td>{{user.name}}</td>
-            <td *ngIf="user.attendence == true ">
-                <input type="checkbox" [checked]="user.attendence" (change)="markAttendance(user.user_id)">
-            </td>
-            <td *ngIf="user.attendence == false ">
-                <input type="checkbox" formControlName="attendence" [(ngModel)]="user.attendence"
-                    (change)="markAttendance(user.user_id)">
-            </td>
+<h3> Today Date:- {{today_date}} </h3>
+<div>
+    <form [formGroup]="userForm">
+        <table>
+            <tr>
+                <th>EmpId</th>
+                <th>Emp Name</th>
+                <th>Mark Attendence</th>
+            </tr>
+            <tr *ngFor="let user of all_users; let i = index;">
+                <td>{{user.user_id}}</td>
+                <td>{{user.name}}</td>
+                <td *ngIf="user.attendence == true ">
+                    <input type="checkbox" [checked]="user.attendence" (change)="markAttendance(user.user_id)">
+                </td>
+                <td *ngIf="user.attendence == false ">
+                    <input type="checkbox" formControlName="attendence" [(ngModel)]="user.attendence"
+                        (change)="markAttendance(user.user_id)">
+                </td>
 
-        </tr>
-    </table>
-</form>
+            </tr>
+        </table>
+    </form>
+</div>

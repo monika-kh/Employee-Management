@@ -4,6 +4,7 @@ import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 import { DashboardService } from 'src/app/dashboard/dashboard.service';
 import { EmployeeService } from '../employee.service';
 import { DatePipe } from '@angular/common';
+import { Location } from '@angular/common';
 
 
 export interface AllUser {
@@ -17,6 +18,7 @@ export interface AllUser {
 }
 
 
+
 @Component({
   selector: 'app-addattendence',
   templateUrl: './addattendence.component.html',
@@ -27,7 +29,7 @@ export class AddattendenceComponent implements OnInit {
 
   userForm: FormGroup = new FormGroup({});
   all_users: AllUser[] = [];
-  today_date: Date = new Date;
+  today_date: any = new Date;
   checklist: any = [];
   markedUsers: number[] = [];
   isChecked: boolean = false;
@@ -35,15 +37,13 @@ export class AddattendenceComponent implements OnInit {
     private fb: FormBuilder,
     private dashboardService: DashboardService,
     private employeeService: EmployeeService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private _location: Location
   ) { }
 
 
   ngOnInit(): void {
-    // this.isChecked
-    this.today_date = new Date()
-    // this.today_date = this.datePipe.transform(this.today_date, 'yyyy-MM-dd');
-
+    this.today_date = this.datePipe.transform(this.today_date, 'yyyy-MM-dd');
     this.userForm = this.fb.group({
       attendence: ''
     });
@@ -95,6 +95,10 @@ export class AddattendenceComponent implements OnInit {
       )
       this.markedUsers.push(user);
     }
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 
